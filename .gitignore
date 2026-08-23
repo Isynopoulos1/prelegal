@@ -1,8 +1,9 @@
-# Python
+# ─── Python ───────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.pyd
 .Python
 build/
 develop-eggs/
@@ -16,27 +17,32 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
 
-# Virtual environments
-.env
+# ─── Virtual environments ─────────────────────────────────────────────────────
 .venv
-env/
 venv/
+env/
 ENV/
+env.bak/
+venv.bak/
 
-# UV
+# ─── uv ───────────────────────────────────────────────────────────────────────
 .uv/
+uv.lock
 
-# FastAPI / Python web
+# ─── FastAPI / Uvicorn ────────────────────────────────────────────────────────
 *.log
 local_settings.py
 instance/
 
-# Testing
+# ─── Testing ──────────────────────────────────────────────────────────────────
 .tox/
 .nox/
 .coverage
@@ -44,11 +50,68 @@ instance/
 htmlcov/
 .pytest_cache/
 .hypothesis/
+pytest.ini
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
 
-# Jupyter
+# ─── Type checking ────────────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ─── Jupyter ──────────────────────────────────────────────────────────────────
 .ipynb_checkpoints
+*.ipynb
 
-# IDE
+# ─── Next.js ──────────────────────────────────────────────────────────────────
+.next/
+out/
+.swc/
+
+# ─── Node / npm / yarn / pnpm ─────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnpm-store/
+package-lock.json
+
+# ─── TypeScript ───────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── Vercel ───────────────────────────────────────────────────────────────────
+.vercel
+
+# ─── Environment / secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Keep the example file
+!.env.example
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ─── Docker ───────────────────────────────────────────────────────────────────
+.docker/
+
+# ─── IDE / editors ────────────────────────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
@@ -57,41 +120,23 @@ htmlcov/
 .project
 .pydevproject
 .settings/
+*.sublime-project
+*.sublime-workspace
 
-# Next.js
-.next/
-out/
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# Next.js production
-build/
-
-# Vercel
-.vercel
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
-
-# Environment files
-.env*.local
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# OS
+# ─── OS ───────────────────────────────────────────────────────────────────────
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Misc
+# ─── Misc ─────────────────────────────────────────────────────────────────────
 *.bak
 *.tmp
 *.temp
-
-# Database
-*.db
+*.orig
+*.rej
+.cache/
