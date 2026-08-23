@@ -1,5 +1,7 @@
 # Prelegal
 
+> **Status: Work In Progress** — This project is actively under development and is expected to be completed by **2026-08-30**.
+
 A platform for drafting common legal agreements.
 
 This is the result of me (Ed) running the Jira tickets through Claude Code. But you should do this yourself!
@@ -74,9 +76,17 @@ prelegal/
 ## API Endpoints
 
 - `GET /api/health` - Health check
-- `POST /api/auth/signup` - Signup (placeholder)
-- `POST /api/auth/signin` - Signin (placeholder)
-- `GET /api/auth/me` - Current user (placeholder)
+- `POST /api/auth/signup` - Create new user account
+- `POST /api/auth/signin` - Sign in and receive JWT cookie
+- `POST /api/auth/signout` - Clear auth cookie
+- `GET /api/auth/me` - Get current user info
+- `GET /api/documents` - List user's saved documents (auth required)
+- `POST /api/documents` - Save new document (auth required)
+- `GET /api/documents/{id}` - Get specific document (auth required)
+- `PUT /api/documents/{id}` - Update document (auth required)
+- `DELETE /api/documents/{id}` - Delete document (auth required)
+- `GET /api/chat/greeting` - Get AI greeting
+- `POST /api/chat/message` - Send chat message and get AI response
 
 ## License
 
