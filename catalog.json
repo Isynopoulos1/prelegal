@@ -5,62 +5,903 @@
     {
       "name": "Mutual Non-Disclosure Agreement",
       "description": "A standard mutual NDA for protecting confidential information exchanged between two parties evaluating a potential business relationship.",
-      "filename": "Mutual-NDA.md"
+      "filename": "Mutual-NDA.md",
+      "coverpage": "Mutual-NDA-coverpage.md",
+      "fields": [
+        {
+          "key": "purpose",
+          "label": "Purpose",
+          "description": "How Confidential Information may be used between the parties",
+          "type": "text",
+          "required": true,
+          "placeholder": "Evaluating whether to enter into a business relationship with the other party."
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date on which this agreement comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "mndaTermType",
+          "label": "MNDA Term",
+          "description": "Whether the agreement expires after a set period or continues until terminated",
+          "type": "select",
+          "required": true,
+          "options": ["expires", "continues"]
+        },
+        {
+          "key": "mndaTermYears",
+          "label": "MNDA Term Length (years)",
+          "description": "Number of years the agreement lasts (if set to expire)",
+          "type": "number",
+          "required": false,
+          "placeholder": "1"
+        },
+        {
+          "key": "confidentialityTermType",
+          "label": "Term of Confidentiality",
+          "description": "How long Confidential Information is protected after the agreement ends",
+          "type": "select",
+          "required": true,
+          "options": ["years", "perpetuity"]
+        },
+        {
+          "key": "confidentialityTermYears",
+          "label": "Confidentiality Term Length (years)",
+          "description": "Number of years confidential information must be protected (if not in perpetuity)",
+          "type": "number",
+          "required": false,
+          "placeholder": "1"
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true,
+          "placeholder": "Delaware"
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true,
+          "placeholder": "courts located in New Castle, DE"
+        },
+        {
+          "key": "modifications",
+          "label": "Modifications",
+          "description": "Any modifications to the standard MNDA terms",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "party1",
+          "label": "Party 1",
+          "description": "First party to the agreement",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Party 2",
+          "description": "Second party to the agreement",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Mutual NDA Cover Page",
       "description": "Cover page template for the Mutual NDA containing customizable terms like effective date, term length, and governing law.",
-      "filename": "Mutual-NDA-coverpage.md"
+      "filename": "Mutual-NDA-coverpage.md",
+      "fields": []
     },
     {
       "name": "Cloud Service Agreement",
       "description": "A comprehensive agreement for selling and buying cloud software and SaaS products, covering access, payment, security, liability, and confidentiality.",
-      "filename": "Cloud-Service-Agreement.md"
+      "filename": "Cloud-Service-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Provider Name",
+          "description": "The company providing the cloud service",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "description": "The company purchasing the cloud service",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date on which this agreement comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "subscriptionPeriod",
+          "label": "Subscription Period",
+          "description": "The initial subscription term length",
+          "type": "text",
+          "required": true,
+          "placeholder": "1 year"
+        },
+        {
+          "key": "technicalSupport",
+          "label": "Technical Support",
+          "description": "Description of technical support to be provided",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "fees",
+          "label": "Fees",
+          "description": "The subscription fees and pricing terms",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "paymentTerms",
+          "label": "Payment Terms",
+          "description": "Payment schedule and process",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Provider",
+          "description": "The cloud service provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Customer",
+          "description": "The customer details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Design Partner Agreement",
       "description": "An agreement for early product access where partners provide feedback in exchange for using pre-release software, helping vendors develop and improve their products.",
-      "filename": "Design-Partner-Agreement.md"
+      "filename": "Design-Partner-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Provider Name",
+          "description": "The company providing early access to the product",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Design Partner Name",
+          "description": "The company acting as design partner",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this agreement comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "programName",
+          "label": "Program Name",
+          "description": "Name of the design partner program",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "feedbackRequirements",
+          "label": "Feedback Requirements",
+          "description": "What type of feedback the design partner agrees to provide",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "accessPeriod",
+          "label": "Access Period",
+          "description": "Duration of early access to the product",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Provider",
+          "description": "The product provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Design Partner",
+          "description": "The design partner details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Service Level Agreement",
       "description": "A standard SLA defining uptime targets, response time commitments, service credits, and remedies for cloud service providers.",
-      "filename": "Service-Level-Agreement.md"
+      "filename": "Service-Level-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Provider Name",
+          "description": "The company providing the service",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "description": "The company receiving the service",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this SLA comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "uptimeTarget",
+          "label": "Uptime Target",
+          "description": "The guaranteed service uptime percentage",
+          "type": "text",
+          "required": true,
+          "placeholder": "99.9%"
+        },
+        {
+          "key": "responseTimeCommitment",
+          "label": "Response Time Commitment",
+          "description": "Timeframes for responding to different severity incidents",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "serviceCredits",
+          "label": "Service Credits",
+          "description": "Credits issued when SLA targets are not met",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Provider",
+          "description": "The service provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Customer",
+          "description": "The customer details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Professional Services Agreement",
       "description": "An agreement for professional services engagements covering deliverables, intellectual property, payment terms, and project management.",
-      "filename": "Professional-Services-Agreement.md"
+      "filename": "Professional-Services-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Service Provider Name",
+          "description": "The company providing professional services",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Client Name",
+          "description": "The company receiving professional services",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this agreement comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "deliverables",
+          "label": "Deliverables",
+          "description": "Description of the work products or outcomes to be delivered",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "projectTimeline",
+          "label": "Project Timeline",
+          "description": "Expected duration and key milestones",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "fees",
+          "label": "Fees",
+          "description": "Total or hourly fees for the services",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "paymentSchedule",
+          "label": "Payment Schedule",
+          "description": "When and how payments are to be made",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "ipOwnership",
+          "label": "IP Ownership",
+          "description": "Who owns the intellectual property created during the engagement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Service Provider",
+          "description": "The service provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Client",
+          "description": "The client details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Partnership Agreement",
       "description": "A standard agreement for business partnerships covering cooperation obligations, trademark licensing, fees, confidentiality, and liability.",
-      "filename": "Partnership-Agreement.md"
+      "filename": "Partnership-Agreement.md",
+      "fields": [
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this partnership agreement comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "partnershipScope",
+          "label": "Partnership Scope",
+          "description": "Description of the scope and goals of the partnership",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "trademarkRights",
+          "label": "Trademark Rights",
+          "description": "Terms under which each party may use the other's trademarks",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "revenueShare",
+          "label": "Revenue Share",
+          "description": "How revenue or referral fees are split between partners",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "fees",
+          "label": "Fees",
+          "description": "Any fees payable between the partners",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Partner 1",
+          "description": "First partner details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Partner 2",
+          "description": "Second partner details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Software License Agreement",
       "description": "A comprehensive license agreement for on-premise or installable software, covering licensing terms, restrictions, warranties, and support.",
-      "filename": "Software-License-Agreement.md"
+      "filename": "Software-License-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Licensor Name",
+          "description": "The company granting the software license",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Licensee Name",
+          "description": "The company receiving the software license",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this license comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "licensedSoftware",
+          "label": "Licensed Software",
+          "description": "Name and description of the software being licensed",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "licenseType",
+          "label": "License Type",
+          "description": "Type of license granted (e.g. perpetual, subscription, per-seat)",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "licenseFees",
+          "label": "License Fees",
+          "description": "The fees payable for the software license",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "supportTerms",
+          "label": "Support Terms",
+          "description": "Description of software support and maintenance included",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Licensor",
+          "description": "The software licensor details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Licensee",
+          "description": "The licensee details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Data Processing Agreement",
       "description": "A GDPR-compliant data processing agreement covering data protection obligations, subprocessors, international transfers, and security requirements.",
-      "filename": "Data-Processing-Agreement.md"
+      "filename": "Data-Processing-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Processor Name",
+          "description": "The company processing the personal data",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Controller Name",
+          "description": "The company controlling the personal data",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this DPA comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "dataSubjects",
+          "label": "Data Subjects",
+          "description": "Categories of individuals whose data will be processed",
+          "type": "text",
+          "required": true,
+          "placeholder": "Customers, employees, end users"
+        },
+        {
+          "key": "processingPurpose",
+          "label": "Processing Purpose",
+          "description": "The purposes for which personal data will be processed",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "dataCategories",
+          "label": "Data Categories",
+          "description": "Categories of personal data to be processed",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "subprocessors",
+          "label": "Subprocessors",
+          "description": "List of approved subprocessors",
+          "type": "text",
+          "required": false
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The law governing this DPA",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Processor",
+          "description": "The data processor details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Controller",
+          "description": "The data controller details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Pilot Agreement",
       "description": "A short-term trial or evaluation agreement allowing prospective customers to test a product before committing to a longer-term deal.",
-      "filename": "Pilot-Agreement.md"
+      "filename": "Pilot-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Provider Name",
+          "description": "The company providing the product for evaluation",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Pilot Customer Name",
+          "description": "The company evaluating the product",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this pilot agreement begins",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "pilotPeriod",
+          "label": "Pilot Period",
+          "description": "Duration of the product evaluation",
+          "type": "text",
+          "required": true,
+          "placeholder": "90 days"
+        },
+        {
+          "key": "evaluationPurpose",
+          "label": "Evaluation Purpose",
+          "description": "What the customer is evaluating and why",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "generalCapAmount",
+          "label": "Liability Cap",
+          "description": "Maximum liability amount for either party",
+          "type": "text",
+          "required": true,
+          "placeholder": "$0"
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Provider",
+          "description": "The product provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Pilot Customer",
+          "description": "The customer evaluating the product",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "Business Associate Agreement",
       "description": "A HIPAA-compliant agreement for business associates handling protected health information (PHI), covering privacy, security, and breach notification requirements.",
-      "filename": "Business-Associate-Agreement.md"
+      "filename": "Business-Associate-Agreement.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Business Associate Name",
+          "description": "The company acting as business associate handling PHI",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Covered Entity Name",
+          "description": "The HIPAA covered entity sharing PHI",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this BAA comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "phiDescription",
+          "label": "PHI Description",
+          "description": "Description of the protected health information involved",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "permittedUses",
+          "label": "Permitted Uses",
+          "description": "Specific permitted uses and disclosures of PHI",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "safeguards",
+          "label": "Safeguards",
+          "description": "Security and privacy safeguards implemented to protect PHI",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this agreement",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Business Associate",
+          "description": "The business associate details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Covered Entity",
+          "description": "The covered entity details",
+          "type": "party",
+          "required": true
+        }
+      ]
     },
     {
       "name": "AI Addendum",
       "description": "An addendum for agreements involving AI/ML features, covering input/output ownership, model training restrictions, and AI-specific disclaimers.",
-      "filename": "AI-Addendum.md"
+      "filename": "AI-Addendum.md",
+      "fields": [
+        {
+          "key": "providerName",
+          "label": "Provider Name",
+          "description": "The company providing AI/ML features",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "customerName",
+          "label": "Customer Name",
+          "description": "The company using the AI/ML features",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "effectiveDate",
+          "label": "Effective Date",
+          "description": "The date this addendum comes into effect",
+          "type": "date",
+          "required": true
+        },
+        {
+          "key": "aiFeatures",
+          "label": "AI Features",
+          "description": "Description of the AI/ML features covered by this addendum",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "trainingDataRights",
+          "label": "Training Data Rights",
+          "description": "Terms governing whether customer data may be used to train AI models",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "outputOwnership",
+          "label": "Output Ownership",
+          "description": "Who owns outputs generated by the AI features",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "governingLaw",
+          "label": "Governing Law",
+          "description": "The US state whose laws govern this addendum",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "jurisdiction",
+          "label": "Jurisdiction",
+          "description": "The courts with exclusive jurisdiction over disputes",
+          "type": "text",
+          "required": true
+        },
+        {
+          "key": "party1",
+          "label": "Provider",
+          "description": "The AI feature provider details",
+          "type": "party",
+          "required": true
+        },
+        {
+          "key": "party2",
+          "label": "Customer",
+          "description": "The customer details",
+          "type": "party",
+          "required": true
+        }
+      ]
     }
   ]
 }
