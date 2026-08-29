@@ -8,9 +8,10 @@ import { generateNdaFilename } from '@/utils/nda';
 
 interface DownloadButtonProps {
   formData: NDAFormData;
+  buttonClassName?: string;
 }
 
-export function DownloadButton({ formData }: DownloadButtonProps) {
+export function DownloadButton({ formData, buttonClassName }: DownloadButtonProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -48,7 +49,7 @@ export function DownloadButton({ formData }: DownloadButtonProps) {
         onClick={handleDownload}
         disabled={isGenerating}
         aria-busy={isGenerating}
-        className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed shadow-sm"
+        className={buttonClassName ?? "flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed shadow-sm"}
       >
         {isGenerating ? (
           <>
