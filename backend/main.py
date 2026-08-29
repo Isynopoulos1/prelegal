@@ -61,12 +61,19 @@ if STATIC_DIR.exists():
 
     @app.get("/{full_path:path}")
     async def serve_spa(full_path: str):
-        """Serve static files or fallback to index.html for SPA routing."""
+        """Serve static files or fallback to route HTML for Next.js static export."""
         file_path = STATIC_DIR / full_path
 
+        # Exact file match (e.g. /_next/..., /favicon.ico)
         if full_path and file_path.exists() and file_path.is_file():
             return FileResponse(file_path)
 
+        # Next.js static export writes /nda → nda.html
+        html_path = STATIC_DIR / f"{full_path}.html"
+        if full_path and html_path.exists():
+            return FileResponse(html_path)
+
+        # Root fallback
         index_path = STATIC_DIR / "index.html"
         if index_path.exists():
             return FileResponse(index_path)
