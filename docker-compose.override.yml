@@ -1,0 +1,4 @@
+services:
+  prelegal:
+    ports: !override
+      - "8001:8000"
