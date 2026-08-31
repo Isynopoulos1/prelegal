@@ -17,7 +17,7 @@ export function ChatInterface({ formData, onDocumentTypeDetected, onFieldsExtrac
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [documentTypeDetected, setDocumentTypeDetected] = useState(false);
+  const [detectedDocumentType, setDetectedDocumentType] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -66,11 +66,11 @@ export function ChatInterface({ formData, onDocumentTypeDetected, onFieldsExtrac
       // Add assistant response to messages (use functional update to avoid race conditions)
       setMessages(prev => [...prev, { role: 'assistant', content: response.response }]);
 
-      // Detect document type if not already detected
-      if (!documentTypeDetected && response.documentType) {
+      // Detect (or re-detect) document type when AI returns a new one
+      if (response.documentType && response.documentType !== detectedDocumentType) {
         const docType = parseDocumentType(response.documentType);
         if (docType) {
-          setDocumentTypeDetected(true);
+          setDetectedDocumentType(response.documentType);
           onDocumentTypeDetected(docType);
         }
       }
