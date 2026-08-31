@@ -29,7 +29,7 @@ There is an OPENROUTER_API_KEY in the .env file in the project root.
 The entire project should be packaged into a Docker container.  
 The backend should be in backend/ and be a uv project, using FastAPI.  
 The frontend should be in frontend/  
-The database should use SQLLite and be created from scratch each time the Docker container is brought up, allowing for a users table with sign up and sign in.  
+The database should use SQLite and be created from scratch each time the Docker container is brought up, allowing for a users table with sign up and sign in.  
 Consider statically building the frontend and serving it via FastAPI, if that will work.  
 There should be scripts in scripts/ for:  
 ```bash
@@ -45,7 +45,7 @@ scripts/stop-linux.sh
 scripts/start-windows.ps1
 scripts/stop-windows.ps1
 ```
-Backend available at http://localhost:8000
+Backend available at http://localhost:8000 (locally overridden to http://localhost:8001 via docker-compose.override.yml)
 
 ## Color Scheme
 - Accent Yellow: `#ecad0a`
@@ -56,13 +56,19 @@ Backend available at http://localhost:8000
 
 ## Implementation Status
 
+### Completed (PL-3)
+- Standalone Mutual NDA Creator prototype at /nda (static HTML, no backend)
+- Live preview and PDF download for Mutual NDA
+- Served by Next.js static export
+
 ### Completed (PL-4)
 - Docker multi-stage build (Node frontend + Python backend)
-- FastAPI backend with SQLite (fresh DB each container start)
-- Next.js static export served by FastAPI at localhost:8000
+- FastAPI backend with SQLite (fresh DB each container start via `--build`)
+- Next.js static export served by FastAPI
 - Auth routes: POST /api/auth/signup, POST /api/auth/signin, POST /api/auth/signout, GET /api/auth/me
 - Start/stop scripts for Mac, Linux, Windows
-- Mutual NDA form with live preview and PDF download
+- docker-compose.yml healthcheck on /api/health
+- .env.example documents OPENROUTER_API_KEY and SECRET_KEY
 
 ### Completed (PL-5)
 - AI chat interface replaces manual form for NDA creation
