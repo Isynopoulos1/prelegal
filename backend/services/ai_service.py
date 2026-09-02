@@ -37,8 +37,8 @@ For Mutual NDA (mutual_nda):
 - confidentialityTermYears: Number of years if years (default: 1)
 - governingLaw: Which state's laws govern (e.g., "Delaware")
 - jurisdiction: Where disputes resolved (e.g., "New Castle County, Delaware")
-- party1: company, name, title, noticeAddress (email)
-- party2: company, name, title, noticeAddress (email)
+- party1: company, name, title, noticeAddress (mailing address for legal notices)
+- party2: company, name, title, noticeAddress (mailing address for legal notices)
 
 For Cloud Service Agreement (cloud_service):
 - providerName: The SaaS provider company
